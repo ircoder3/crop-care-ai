@@ -22,20 +22,24 @@ const Footer = () => {
 
   const schemes = [
     {
+      name: language === 'en' ? 'PM Kisan Samman Nidhi' : 'ಪಿಎಂ ಕಿಸಾನ್ ಸಮ್ಮಾನ್ ನಿಧಿ',
+      url: 'https://pmkisan.gov.in/',
+    },
+    {
       name: language === 'en' ? 'Raitha Siri - Karnataka Farmer Scheme' : 'ರೈತ ಸಿರಿ - ಕರ್ನಾಟಕ ರೈತ ಯೋಜನೆ',
       url: 'https://raitamitra.karnataka.gov.in/',
     },
     {
-      name: language === 'en' ? 'Krishi Bhagya - Karnataka' : 'ಕೃಷಿ ಭಾಗ್ಯ - ಕರ್ನಾಟಕ',
-      url: 'https://krishibhagya.karnataka.gov.in/',
-    },
-    {
-      name: language === 'en' ? 'Karnataka Raitha Suraksha' : 'ಕರ್ನಾಟಕ ರೈತ ಸುರಕ್ಷಾ',
-      url: 'https://kssda.karnataka.gov.in/',
-    },
-    {
       name: language === 'en' ? 'Bhoochetana - Karnataka Soil Health' : 'ಭೂಚೇತನ - ಕರ್ನಾಟಕ ಮಣ್ಣಿನ ಆರೋಗ್ಯ',
       url: 'https://raitamitra.karnataka.gov.in/info-1/Bhoochetana/en',
+    },
+    {
+      name: language === 'en' ? 'PM Fasal Bima Yojana' : 'ಪಿಎಂ ಫಸಲ್ ಬಿಮಾ ಯೋಜನೆ',
+      url: 'https://pmfby.gov.in/',
+    },
+    {
+      name: language === 'en' ? 'Kisan Credit Card (KCC)' : 'ಕಿಸಾನ್ ಕ್ರೆಡಿಟ್ ಕಾರ್ಡ್ (ಕೆಸಿಸಿ)',
+      url: 'https://www.pmkisan.gov.in/kcc.aspx',
     },
   ];
 
