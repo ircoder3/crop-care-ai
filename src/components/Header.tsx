@@ -1,63 +1,37 @@
-import { Leaf, Globe } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Leaf } from 'lucide-react';
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Header = () => {
   const { language, setLanguage, t } = useLanguage();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-border/50">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-glow">
-            <Leaf className="w-6 h-6 text-primary-foreground" />
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+            <Leaf className="w-5 h-5 text-primary-foreground" />
           </div>
-          <div>
-            <h1 className={`text-xl font-bold text-foreground ${language === 'kn' ? 'font-kannada' : ''}`}>
-              {t.appName}
-            </h1>
-            <p className={`text-xs text-muted-foreground ${language === 'kn' ? 'font-kannada' : ''}`}>
-              {t.tagline}
-            </p>
-          </div>
+          <h1 className={`text-sm md:text-base font-semibold text-foreground ${language === 'kn' ? 'font-kannada' : ''}`}>
+            {t.tagline}
+          </h1>
         </div>
 
-        <nav className="hidden md:flex items-center gap-6">
-          <a href="#home" className={`text-sm font-medium text-muted-foreground hover:text-primary transition-colors ${language === 'kn' ? 'font-kannada' : ''}`}>
-            {t.home}
-          </a>
-          <a href="#analyze" className={`text-sm font-medium text-muted-foreground hover:text-primary transition-colors ${language === 'kn' ? 'font-kannada' : ''}`}>
-            {t.analyze}
-          </a>
-          <a href="#weather" className={`text-sm font-medium text-muted-foreground hover:text-primary transition-colors ${language === 'kn' ? 'font-kannada' : ''}`}>
-            {t.weather}
-          </a>
-        </nav>
-
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" size="sm" className="gap-2">
-              <Globe className="w-4 h-4" />
-              <span className={language === 'kn' ? 'font-kannada' : ''}>
-                {language === 'en' ? 'EN' : 'ಕನ್ನಡ'}
-              </span>
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuItem onClick={() => setLanguage('en')}>
-              {t.english}
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setLanguage('kn')} className="font-kannada">
-              {t.kannada}
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <Select value={language} onValueChange={(value: 'en' | 'kn') => setLanguage(value)}>
+          <SelectTrigger className="w-[100px] h-8 text-sm">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="en">English</SelectItem>
+            <SelectItem value="kn" className="font-kannada">ಕನ್ನಡ</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
     </header>
   );

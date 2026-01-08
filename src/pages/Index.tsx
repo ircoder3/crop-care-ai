@@ -13,7 +13,7 @@ interface AnalysisResult {
   confidence: number;
   disease?: string;
   fertilizers: Array<{ name: string; dosage: string; reason: string }>;
-  irrigation: Array<{ method: string; frequency: string; tips: string }>;
+  irrigation: Array<{ method: string; waterPercentage: string }>;
 }
 
 const Index = () => {
@@ -42,11 +42,10 @@ const Index = () => {
         confidence: 94,
         fertilizers: [
           { name: 'NPK 20-20-20', dosage: '2kg per acre', reason: 'Maintains balanced nutrient levels' },
-          { name: 'Vermicompost', dosage: '500kg per acre', reason: 'Improves soil organic matter' },
+          { name: 'Vermicompost', dosage: 'Suggested', reason: 'Improves soil organic matter' },
         ],
         irrigation: [
-          { method: 'Drip Irrigation', frequency: 'Every 3 days', tips: 'Maintain soil moisture at 60-70%' },
-          { method: 'Mulching', frequency: 'Once per season', tips: 'Use organic mulch to retain moisture' },
+          { method: 'Drip Irrigation', waterPercentage: '60-70%' },
         ],
       },
       unhealthy: {
@@ -55,12 +54,10 @@ const Index = () => {
         disease: 'Nitrogen Deficiency',
         fertilizers: [
           { name: 'Urea (46-0-0)', dosage: '3kg per acre', reason: 'Quickly addresses nitrogen deficiency' },
-          { name: 'Ammonium Sulfate', dosage: '2kg per acre', reason: 'Provides nitrogen and sulfur' },
-          { name: 'Compost', dosage: '1 ton per acre', reason: 'Long-term soil health improvement' },
+          { name: 'Vermicompost', dosage: 'Suggested', reason: 'Long-term soil health improvement' },
         ],
         irrigation: [
-          { method: 'Sprinkler System', frequency: 'Every 2 days', tips: 'Water during early morning hours' },
-          { method: 'Fertigation', frequency: 'Weekly', tips: 'Mix fertilizers with irrigation water' },
+          { method: 'Drip Irrigation', waterPercentage: '70-80%' },
         ],
       },
       diseased: {
@@ -69,12 +66,10 @@ const Index = () => {
         disease: 'Leaf Blight (Bacterial)',
         fertilizers: [
           { name: 'Potassium-rich fertilizer', dosage: '2.5kg per acre', reason: 'Strengthens plant immunity' },
-          { name: 'Copper Sulfate', dosage: '0.5kg per acre', reason: 'Acts as fungicide and nutrient' },
-          { name: 'Neem Cake', dosage: '100kg per acre', reason: 'Natural disease suppressant' },
+          { name: 'Vermicompost', dosage: 'Suggested', reason: 'Natural disease suppressant' },
         ],
         irrigation: [
-          { method: 'Drip Irrigation', frequency: 'Every 4 days', tips: 'Avoid wetting leaves, water at root zone only' },
-          { method: 'Reduce watering', frequency: 'As needed', tips: 'Over-watering promotes disease spread' },
+          { method: 'Drip Irrigation', waterPercentage: '50-60%' },
         ],
       },
     };

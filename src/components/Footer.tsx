@@ -1,74 +1,88 @@
-import { Leaf, Mail, Phone, MapPin } from 'lucide-react';
+import { Leaf, HelpCircle, ExternalLink } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
   const { language, t } = useLanguage();
   const fontClass = language === 'kn' ? 'font-kannada' : '';
 
+  const faqs = [
+    {
+      question: language === 'en' ? 'How do I upload crop images?' : 'ನಾನು ಬೆಳೆ ಚಿತ್ರಗಳನ್ನು ಹೇಗೆ ಅಪ್‌ಲೋಡ್ ಮಾಡುವುದು?',
+      answer: language === 'en' ? 'Click on "Upload Crop Image" and select a clear photo of your leaf or crop.' : '"ಬೆಳೆ ಚಿತ್ರ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ" ಕ್ಲಿಕ್ ಮಾಡಿ ಮತ್ತು ನಿಮ್ಮ ಎಲೆ ಅಥವಾ ಬೆಳೆಯ ಸ್ಪಷ್ಟ ಫೋಟೋ ಆಯ್ಕೆಮಾಡಿ.',
+    },
+    {
+      question: language === 'en' ? 'What image formats are supported?' : 'ಯಾವ ಚಿತ್ರ ಸ್ವರೂಪಗಳನ್ನು ಬೆಂಬಲಿಸಲಾಗುತ್ತದೆ?',
+      answer: language === 'en' ? 'JPG and PNG images up to 10MB.' : '10MB ವರೆಗೆ JPG ಮತ್ತು PNG ಚಿತ್ರಗಳು.',
+    },
+    {
+      question: language === 'en' ? 'Is this service free?' : 'ಈ ಸೇವೆ ಉಚಿತವೇ?',
+      answer: language === 'en' ? 'Yes, the crop health analysis is completely free.' : 'ಹೌದು, ಬೆಳೆ ಆರೋಗ್ಯ ವಿಶ್ಲೇಷಣೆ ಸಂಪೂರ್ಣವಾಗಿ ಉಚಿತ.',
+    },
+  ];
+
+  const schemes = [
+    {
+      name: language === 'en' ? 'PM-KISAN Scheme' : 'ಪಿಎಂ-ಕಿಸಾನ್ ಯೋಜನೆ',
+      url: 'https://pmkisan.gov.in/',
+    },
+    {
+      name: language === 'en' ? 'Soil Health Card' : 'ಮಣ್ಣಿನ ಆರೋಗ್ಯ ಕಾರ್ಡ್',
+      url: 'https://soilhealth.dac.gov.in/',
+    },
+    {
+      name: language === 'en' ? 'Kisan Credit Card' : 'ಕಿಸಾನ್ ಕ್ರೆಡಿಟ್ ಕಾರ್ಡ್',
+      url: 'https://www.nabard.org/content.aspx?id=586',
+    },
+    {
+      name: language === 'en' ? 'Crop Insurance (PMFBY)' : 'ಬೆಳೆ ವಿಮೆ (ಪಿಎಂಎಫ್‌ಬಿವೈ)',
+      url: 'https://pmfby.gov.in/',
+    },
+  ];
+
   return (
-    <footer className="bg-primary text-primary-foreground py-16">
+    <footer className="bg-primary text-primary-foreground py-12">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-10 mb-12">
-          {/* Brand */}
+        <div className="grid md:grid-cols-2 gap-10 mb-8">
+          {/* FAQs */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-wheat flex items-center justify-center">
-                <Leaf className="w-6 h-6 text-earth" />
-              </div>
-              <h3 className={`text-xl font-bold ${fontClass}`}>{t.appName}</h3>
+            <div className="flex items-center gap-2 mb-4">
+              <HelpCircle className="w-5 h-5" />
+              <h4 className={`text-lg font-semibold ${fontClass}`}>
+                {language === 'en' ? 'Frequently Asked Questions' : 'ಪದೇ ಪದೇ ಕೇಳಲಾಗುವ ಪ್ರಶ್ನೆಗಳು'}
+              </h4>
             </div>
-            <p className={`text-primary-foreground/80 leading-relaxed ${fontClass}`}>
-              {t.footerText}
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className={`text-lg font-semibold mb-4 ${fontClass}`}>Quick Links</h4>
-            <nav className="space-y-3">
-              <a href="#home" className={`block text-primary-foreground/80 hover:text-wheat transition-colors ${fontClass}`}>
-                {t.home}
-              </a>
-              <a href="#analyze" className={`block text-primary-foreground/80 hover:text-wheat transition-colors ${fontClass}`}>
-                {t.analyze}
-              </a>
-              <a href="#weather" className={`block text-primary-foreground/80 hover:text-wheat transition-colors ${fontClass}`}>
-                {t.weather}
-              </a>
-            </nav>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className={`text-lg font-semibold mb-4 ${fontClass}`}>{t.contactUs}</h4>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-wheat" />
-                <span className="text-primary-foreground/80">support@krishimitra.com</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-wheat" />
-                <span className="text-primary-foreground/80">+91 1800 123 4567</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-wheat" />
-                <span className="text-primary-foreground/80">Bangalore, Karnataka</span>
-              </div>
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <div key={index}>
+                  <p className={`font-medium text-primary-foreground ${fontClass}`}>{faq.question}</p>
+                  <p className={`text-sm text-primary-foreground/80 ${fontClass}`}>{faq.answer}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
 
-        <div className="border-t border-primary-foreground/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-primary-foreground/60">
-            © 2024 KrishiMitra. All rights reserved.
-          </p>
-          <div className="flex gap-6 text-sm">
-            <a href="#" className={`text-primary-foreground/60 hover:text-wheat transition-colors ${fontClass}`}>
-              {t.privacy}
-            </a>
-            <a href="#" className={`text-primary-foreground/60 hover:text-wheat transition-colors ${fontClass}`}>
-              {t.terms}
-            </a>
+          {/* Government Schemes */}
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <Leaf className="w-5 h-5" />
+              <h4 className={`text-lg font-semibold ${fontClass}`}>
+                {language === 'en' ? 'Government Schemes for Farmers' : 'ರೈತರಿಗೆ ಸರ್ಕಾರಿ ಯೋಜನೆಗಳು'}
+              </h4>
+            </div>
+            <div className="space-y-2">
+              {schemes.map((scheme, index) => (
+                <a
+                  key={index}
+                  href={scheme.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center gap-2 text-primary-foreground/90 hover:text-primary-foreground transition-colors ${fontClass}`}
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  <span>{scheme.name}</span>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
