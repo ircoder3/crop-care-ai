@@ -46,9 +46,9 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group p-6 rounded-2xl card-gradient shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="p-6 rounded-2xl bg-card border border-border shadow-sm"
             >
-              <div className={`w-14 h-14 ${feature.color} rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`w-14 h-14 ${feature.color} rounded-xl flex items-center justify-center mb-5`}>
                 <feature.icon className="w-7 h-7 text-primary-foreground" />
               </div>
               <h3 className={`text-lg font-semibold text-foreground mb-3 ${fontClass}`}>
