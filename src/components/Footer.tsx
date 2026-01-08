@@ -1,4 +1,4 @@
-import { Leaf, HelpCircle, ExternalLink } from 'lucide-react';
+import { Leaf, ExternalLink } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
@@ -22,20 +22,20 @@ const Footer = () => {
 
   const schemes = [
     {
-      name: language === 'en' ? 'PM-KISAN Scheme' : 'ಪಿಎಂ-ಕಿಸಾನ್ ಯೋಜನೆ',
-      url: 'https://pmkisan.gov.in/',
+      name: language === 'en' ? 'Raitha Siri - Karnataka Farmer Scheme' : 'ರೈತ ಸಿರಿ - ಕರ್ನಾಟಕ ರೈತ ಯೋಜನೆ',
+      url: 'https://raitamitra.karnataka.gov.in/',
     },
     {
-      name: language === 'en' ? 'Soil Health Card' : 'ಮಣ್ಣಿನ ಆರೋಗ್ಯ ಕಾರ್ಡ್',
-      url: 'https://soilhealth.dac.gov.in/',
+      name: language === 'en' ? 'Krishi Bhagya - Karnataka' : 'ಕೃಷಿ ಭಾಗ್ಯ - ಕರ್ನಾಟಕ',
+      url: 'https://krishibhagya.karnataka.gov.in/',
     },
     {
-      name: language === 'en' ? 'Kisan Credit Card' : 'ಕಿಸಾನ್ ಕ್ರೆಡಿಟ್ ಕಾರ್ಡ್',
-      url: 'https://www.nabard.org/content.aspx?id=586',
+      name: language === 'en' ? 'Karnataka Raitha Suraksha' : 'ಕರ್ನಾಟಕ ರೈತ ಸುರಕ್ಷಾ',
+      url: 'https://kssda.karnataka.gov.in/',
     },
     {
-      name: language === 'en' ? 'Crop Insurance (PMFBY)' : 'ಬೆಳೆ ವಿಮೆ (ಪಿಎಂಎಫ್‌ಬಿವೈ)',
-      url: 'https://pmfby.gov.in/',
+      name: language === 'en' ? 'Bhoochetana - Karnataka Soil Health' : 'ಭೂಚೇತನ - ಕರ್ನಾಟಕ ಮಣ್ಣಿನ ಆರೋಗ್ಯ',
+      url: 'https://raitamitra.karnataka.gov.in/info-1/Bhoochetana/en',
     },
   ];
 
@@ -46,9 +46,8 @@ const Footer = () => {
           {/* FAQs */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <HelpCircle className="w-5 h-5" />
               <h4 className={`text-lg font-semibold ${fontClass}`}>
-                {language === 'en' ? 'Frequently Asked Questions' : 'ಪದೇ ಪದೇ ಕೇಳಲಾಗುವ ಪ್ರಶ್ನೆಗಳು'}
+                {language === 'en' ? 'Frequently Asked Questions ?' : 'ಪದೇ ಪದೇ ಕೇಳಲಾಗುವ ಪ್ರಶ್ನೆಗಳು ?'}
               </h4>
             </div>
             <div className="space-y-4">
