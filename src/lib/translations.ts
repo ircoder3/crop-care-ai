@@ -13,7 +13,7 @@ export const translations = {
     about: "About",
     
     // Hero
-    heroTitle: "Your Smart Farming AI Powered Crop Health Assistant",
+    heroTitle: "Smart Farming - Starts Here",
     heroSubtitle: "Upload a photo of your crop or leaf to instantly diagnose health issues, get fertilizer recommendations, and optimize your irrigation.",
     uploadButton: "Upload Crop Image",
     learnMore: "Learn More",
@@ -77,7 +77,7 @@ export const translations = {
     about: "ನಮ್ಮ ಬಗ್ಗೆ",
     
     // Hero
-    heroTitle: "ನಿಮ್ಮ ಸ್ಮಾರ್ಟ್ ಕೃಷಿ AI ಆಧಾರಿತ ಬೆಳೆ ಆರೋಗ್ಯ ಸಹಾಯಕ",
+    heroTitle: "ಸ್ಮಾರ್ಟ್ ಕೃಷಿ - ಇಲ್ಲಿ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ",
     heroSubtitle: "ಆರೋಗ್ಯ ಸಮಸ್ಯೆಗಳನ್ನು ತಕ್ಷಣ ಪತ್ತೆಹಚ್ಚಲು, ರಸಗೊಬ್ಬರ ಶಿಫಾರಸುಗಳನ್ನು ಪಡೆಯಲು ಮತ್ತು ನಿಮ್ಮ ನೀರಾವರಿಯನ್ನು ಅತ್ಯುತ್ತಮಗೊಳಿಸಲು ನಿಮ್ಮ ಬೆಳೆ ಅಥವಾ ಎಲೆಯ ಫೋಟೋ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ.",
     uploadButton: "ಬೆಳೆ ಚಿತ್ರ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",
     learnMore: "ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ",
