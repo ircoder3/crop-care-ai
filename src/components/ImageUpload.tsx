@@ -96,8 +96,11 @@ const ImageUpload = ({ onImageUpload, isAnalyzing }: ImageUploadProps) => {
                     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
                       <ImageIcon className="w-6 h-6 text-primary" />
                     </div>
-                    <p className={`text-foreground font-medium mb-2 ${fontClass}`}>
+                    <p className={`text-foreground font-medium mb-1 ${fontClass}`}>
                       {language === 'en' ? 'Image uploaded successfully!' : 'ಚಿತ್ರ ಯಶಸ್ವಿಯಾಗಿ ಅಪ್‌ಲೋಡ್ ಆಗಿದೆ!'}
+                    </p>
+                    <p className={`text-sm text-primary font-medium mb-3 ${fontClass}`}>
+                      {language === 'en' ? 'Check results below:' : 'ಕೆಳಗೆ ಫಲಿತಾಂಶಗಳನ್ನು ನೋಡಿ:'}
                     </p>
                     <Button
                       variant="outline"

@@ -39,12 +39,24 @@ const Index = () => {
     const statuses: Array<'healthy' | 'unhealthy' | 'diseased'> = ['healthy', 'unhealthy', 'diseased'];
     const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
 
+    // Available plants: Pepper, Tomato, Cabbage, Lettuce, Spinach, Radish
+    const plants = [
+      { name: 'Tomato (Solanum lycopersicum)', type: 'Vegetable Crop' },
+      { name: 'Pepper (Capsicum annuum)', type: 'Vegetable Crop' },
+      { name: 'Cabbage (Brassica oleracea)', type: 'Leafy Vegetable' },
+      { name: 'Lettuce (Lactuca sativa)', type: 'Leafy Vegetable' },
+      { name: 'Spinach (Spinacia oleracea)', type: 'Leafy Vegetable' },
+      { name: 'Radish (Raphanus sativus)', type: 'Root Vegetable' },
+    ];
+    
+    const randomPlant = plants[Math.floor(Math.random() * plants.length)];
+
     const mockResults: Record<string, AnalysisResult> = {
       healthy: {
         status: 'healthy',
         confidence: 94,
-        plantName: 'Tomato (Solanum lycopersicum)',
-        plantType: 'Vegetable Crop',
+        plantName: randomPlant.name,
+        plantType: randomPlant.type,
         leafCondition: 'Green, healthy leaves with good texture',
         fertilizers: [
           { name: 'NPK 20-20-20', dosage: '2kg per acre', reason: 'Maintains balanced nutrient levels' },
@@ -58,8 +70,8 @@ const Index = () => {
         status: 'unhealthy',
         confidence: 87,
         disease: 'Nitrogen Deficiency',
-        plantName: 'Rice (Oryza sativa)',
-        plantType: 'Cereal Crop',
+        plantName: randomPlant.name,
+        plantType: randomPlant.type,
         leafCondition: 'Yellowing leaves, stunted growth',
         fertilizers: [
           { name: 'Urea (46-0-0)', dosage: '3kg per acre', reason: 'Quickly addresses nitrogen deficiency' },
@@ -73,8 +85,8 @@ const Index = () => {
         status: 'diseased',
         confidence: 91,
         disease: 'Leaf Blight (Bacterial)',
-        plantName: 'Maize (Zea mays)',
-        plantType: 'Cereal Crop',
+        plantName: randomPlant.name,
+        plantType: randomPlant.type,
         leafCondition: 'Brown spots, wilting edges',
         fertilizers: [
           { name: 'Potassium-rich fertilizer', dosage: '2.5kg per acre', reason: 'Strengthens plant immunity' },
