@@ -6,6 +6,9 @@ interface AnalysisResult {
   status: 'healthy' | 'unhealthy' | 'diseased';
   confidence: number;
   disease?: string;
+  plantName: string;
+  plantType: string;
+  leafCondition: string;
   fertilizers: Array<{ name: string; dosage: string; reason: string }>;
   irrigation: Array<{ method: string; waterPercentage: string }>;
 }
@@ -51,6 +54,33 @@ const AnalysisResults = ({ result }: AnalysisResultsProps) => {
               {t.resultsTitle}
             </h2>
             <div className="w-16 h-1 bg-primary mx-auto rounded-full" />
+          </div>
+
+          {/* Plant Details Card */}
+          <div className="bg-background border-2 border-primary rounded-lg p-6 mb-6">
+            <h3 className={`text-lg font-semibold text-foreground mb-4 ${fontClass}`}>
+              {language === 'en' ? 'Plant Details' : 'ಸಸ್ಯದ ವಿವರಗಳು'}
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="p-3 bg-muted rounded-lg">
+                <p className={`text-xs text-muted-foreground mb-1 ${fontClass}`}>
+                  {language === 'en' ? 'Plant/Crop Name' : 'ಸಸ್ಯ/ಬೆಳೆ ಹೆಸರು'}
+                </p>
+                <p className="font-medium text-foreground">{result.plantName}</p>
+              </div>
+              <div className="p-3 bg-muted rounded-lg">
+                <p className={`text-xs text-muted-foreground mb-1 ${fontClass}`}>
+                  {language === 'en' ? 'Plant Type' : 'ಸಸ್ಯ ಪ್ರಕಾರ'}
+                </p>
+                <p className="font-medium text-foreground">{result.plantType}</p>
+              </div>
+              <div className="p-3 bg-muted rounded-lg">
+                <p className={`text-xs text-muted-foreground mb-1 ${fontClass}`}>
+                  {language === 'en' ? 'Leaf Condition' : 'ಎಲೆ ಸ್ಥಿತಿ'}
+                </p>
+                <p className="font-medium text-foreground">{result.leafCondition}</p>
+              </div>
+            </div>
           </div>
 
           {/* Health Status Card */}
