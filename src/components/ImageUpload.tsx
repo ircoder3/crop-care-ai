@@ -83,28 +83,31 @@ const ImageUpload = ({ onImageUpload, isAnalyzing }: ImageUploadProps) => {
             onDrop={handleDrop}
           >
             {preview ? (
-              <div className="relative">
-                <img
-                  src={preview}
-                  alt="Crop preview"
-                  className="w-full h-64 object-cover rounded-xl"
-                />
-                {!isAnalyzing && (
-                  <button
-                    onClick={clearPreview}
-                    className="absolute top-3 right-3 w-8 h-8 bg-destructive rounded-full flex items-center justify-center text-destructive-foreground hover:bg-destructive/90 transition-colors"
-                  >
-                    <X className="w-4 h-4" />
-                  </button>
-                )}
-                {isAnalyzing && (
-                  <div className="absolute inset-0 bg-background/80 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                    <div className="text-center">
-                      <Loader2 className="w-10 h-10 text-primary animate-spin mx-auto mb-3" />
-                      <p className={`text-foreground font-medium ${fontClass}`}>
-                        {t.analyzing}
-                      </p>
+              <div className="text-center py-6">
+                {isAnalyzing ? (
+                  <div className="flex flex-col items-center">
+                    <Loader2 className="w-10 h-10 text-primary animate-spin mb-3" />
+                    <p className={`text-foreground font-medium ${fontClass}`}>
+                      {t.analyzing}
+                    </p>
+                  </div>
+                ) : (
+                  <div className="flex flex-col items-center">
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                      <ImageIcon className="w-6 h-6 text-primary" />
                     </div>
+                    <p className={`text-foreground font-medium mb-2 ${fontClass}`}>
+                      {language === 'en' ? 'Image uploaded successfully!' : 'ಚಿತ್ರ ಯಶಸ್ವಿಯಾಗಿ ಅಪ್‌ಲೋಡ್ ಆಗಿದೆ!'}
+                    </p>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={clearPreview}
+                      className="gap-2"
+                    >
+                      <X className="w-4 h-4" />
+                      <span className={fontClass}>{language === 'en' ? 'Upload different image' : 'ಬೇರೆ ಚಿತ್ರವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ'}</span>
+                    </Button>
                   </div>
                 )}
               </div>

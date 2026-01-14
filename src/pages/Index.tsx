@@ -12,6 +12,9 @@ interface AnalysisResult {
   status: 'healthy' | 'unhealthy' | 'diseased';
   confidence: number;
   disease?: string;
+  plantName: string;
+  plantType: string;
+  leafCondition: string;
   fertilizers: Array<{ name: string; dosage: string; reason: string }>;
   irrigation: Array<{ method: string; waterPercentage: string }>;
 }
@@ -40,6 +43,9 @@ const Index = () => {
       healthy: {
         status: 'healthy',
         confidence: 94,
+        plantName: 'Tomato (Solanum lycopersicum)',
+        plantType: 'Vegetable Crop',
+        leafCondition: 'Green, healthy leaves with good texture',
         fertilizers: [
           { name: 'NPK 20-20-20', dosage: '2kg per acre', reason: 'Maintains balanced nutrient levels' },
           { name: 'Vermicompost', dosage: 'Suggested', reason: 'Improves soil organic matter' },
@@ -52,6 +58,9 @@ const Index = () => {
         status: 'unhealthy',
         confidence: 87,
         disease: 'Nitrogen Deficiency',
+        plantName: 'Rice (Oryza sativa)',
+        plantType: 'Cereal Crop',
+        leafCondition: 'Yellowing leaves, stunted growth',
         fertilizers: [
           { name: 'Urea (46-0-0)', dosage: '3kg per acre', reason: 'Quickly addresses nitrogen deficiency' },
           { name: 'Vermicompost', dosage: 'Suggested', reason: 'Long-term soil health improvement' },
@@ -64,6 +73,9 @@ const Index = () => {
         status: 'diseased',
         confidence: 91,
         disease: 'Leaf Blight (Bacterial)',
+        plantName: 'Maize (Zea mays)',
+        plantType: 'Cereal Crop',
+        leafCondition: 'Brown spots, wilting edges',
         fertilizers: [
           { name: 'Potassium-rich fertilizer', dosage: '2.5kg per acre', reason: 'Strengthens plant immunity' },
           { name: 'Vermicompost', dosage: 'Suggested', reason: 'Natural disease suppressant' },
